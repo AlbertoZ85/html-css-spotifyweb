@@ -1,11 +1,222 @@
+/* GENERAL STYLES */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #6d6d6d;
+    background-color: #141922;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+aside {
+    background-color: black;
+    /* FIXED */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: calc(100vh - 100px);
+    /* FLEX */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 50px;
+    height: 100px;
+    width: calc(100% - 50px);
+    background-color: #080b12;
+}
+
+main {
+    width: calc(100% - 50px);
+    height: calc(100vh - 200px);
+    padding: 10px;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+/* TYPOGRAPHY */
+h1, h5 {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.player {
+    background-color: #282828;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+
 .clearfix::after {
     content: '';
     display: table;
     clear: both;
+}
+
+/* ASIDE */
+nav, .info ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, .menu span, .playlist,
+.info span {
+    display: none;
+}
+
+#logo i, .menu i,
+.info i, .info i,
+.info i {
+    font-size: 22px;
+    padding: 8px 0;
+}
+
+.info i.far {
+    font-size: 12px;
+}
+
+#logo i.fab {
+    color: white;
+}
+
+.menu i, .info i, .info i {
+    color: #a3a3a3;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+    aside {
+        width: 250px;
+        padding: 15px 20px;
+    }
+
+    header {
+        width: calc(100% - 250px);
+        left: 250px;
+    }
+
+    main {
+        width: calc(100% - 250px);
+        margin-left: 250px;
+    }
+
+    nav, .info ul {
+        align-items: flex-start;
+    }
+
+    h1 {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 25px;
+    }
+
+    #logo {
+        position: relative;
+    }
+
+    #logo i {
+        font-size: 45px;
+        margin-right: 7px;
+    }
+
+    ul.menu {
+        margin: 15px 0;
+    }
+
+    .menu span {
+        display: inline-block;
+    }
+
+    .menu span, .playlist button span,
+    .playlist li {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 0;
+        color: #6d6d6d;
+    }
+
+    .menu i, .info i, .info i {
+        vertical-align: middle;
+    }
+
+    .menu i {
+        min-width: 35px;
+    }
+
+    .playlist {
+        display: block;
+    }
+
+    .playlist h5 {
+        text-transform: uppercase;
+    }
+
+    button.create-playlist {
+        color: #6d6d6d;
+        background: none;
+        border: none;
+        padding: 8px 0;
+    }
+
+    .playlist .plus-button {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        color: black;
+        background-color: #a3a3a3;
+    }
+
+    .playlist b {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-57%);
+        font-size: 25px;
+    }
+
+    .info li:first-child {
+        border-bottom: 1px solid #a3a3a3;
+    }
+
+    .info span {
+        display: inline;
+        font-size: 13px;
+    }
+
+    .info i {
+        margin-right: 10px;
+    }
+
+    .info i.far {
+        margin-left: 2px;
+    }
+
+    .info li:last-child span {
+        font-weight: 700;
+        color: white;
+    }
+
 }
