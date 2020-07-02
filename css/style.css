@@ -29,6 +29,7 @@ header {
     padding: 5px;
     /* FIXED */
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 50px;
     height: 100px;
@@ -51,6 +52,7 @@ main {
 .player {
     background-color: #282828;
     position: fixed;
+    z-index: 100;
     bottom: 0;
     height: 100px;
     width: 100%;
@@ -86,7 +88,7 @@ button#upgrade:hover {
 }
 
 /* TYPOGRAPHY */
-h1, h4 {
+h1, h2, h3, h4 {
     color: white;
 }
 
@@ -147,8 +149,71 @@ h1, .menu span, .playlist,
 }
 
 .selection-bar a.active {
+    position: relative;
+}
+
+.selection-bar a.active::before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    bottom: -5px;
+    left: 30%;
+    height: 1px;
     border-bottom: 2px solid #adff2f;
-    padding-bottom: 5px;
+}
+
+/* MUSIC CONTENT */
+/* RECENTLY PLAYED */
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.track {
+    flex-basis: calc(100% / 2 - 20px);
+}
+
+.track-img {
+    position: relative;
+}
+
+.track-img img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 75px;
+}
+
+.track-img:hover .overlay,
+.track-img:hover .overlay i {
+    display: block;
+    cursor: pointer;
+}
+
+.track-title {
+    text-align: center;
+}
+.track-title h4 {
+    font-size: 13px;
+    font-weight: 700;
 }
 
 /* MEDIA QUERIES */
@@ -237,8 +302,9 @@ h1, .menu span, .playlist,
         display: block;
     }
 
-    .playlist h4 {
+    .playlist h3 {
         text-transform: uppercase;
+        font-size: 15px;
     }
 
     button.create-playlist {
@@ -293,5 +359,22 @@ h1, .menu span, .playlist,
         font-weight: 700;
         color: white;
     }
+}
 
+@media screen and (min-width: 768px) {
+    .category {
+        justify-content: flex-start;
+    }
+
+    .track {
+        flex-basis: calc(100% / 4 - 20px);
+        margin: 10px 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .track {
+        flex-basis: calc(100% / 6 - 20px);
+        margin: 10px 10px;
+    }
 }

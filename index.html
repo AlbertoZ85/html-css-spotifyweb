@@ -10,6 +10,7 @@
         <title>Spotify</title>
     </head>
     <body>
+        <!-- ASIDE -->
         <aside>
             <nav>
                 <div id="logo">
@@ -22,16 +23,16 @@
                     <li><a href="#"><i class="fas fa-book-open"></i><span>La tua libreria</span></a></li>
                 </ul>
                 <div class="playlist">
-                    <h4>Playlist</h4>
+                    <h3>Playlist</h3>
                     <button class="create-playlist"><div class="plus-button"><b> + </b></div>Crea Playlist</button>
                     <ul>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Best of all times</a></li>
+                        <li><a href="#">Rap & Hip Hop</a></li>
+                        <li><a href="#">Fast rap</a></li>
+                        <li><a href="#">Electric guitar</a></li>
+                        <li><a href="#">Best solos</a></li>
+                        <li><a href="#">Soundtracks</a></li>
+                        <li><a href="#">Miscellaneous</a></li>
                     </ul>
                 </div>
             </nav>
@@ -42,10 +43,13 @@
                 </ul>
             </div>
         </aside>
+        <!-- HEADER -->
         <header>
             <button id="upgrade">Effettua l'upgrade</button>
         </header>
+        <!-- MAIN -->
         <main>
+            <!-- SELECTION BAR -->
             <div class="selection-bar">
                 <ul>
                     <li><a href="#" class="active">In evidenza</a></li>
@@ -55,6 +59,75 @@
                     <li><a href="#">Nuove uscite</a></li>
                     <li><a href="#">Scopri</a></li>
                 </ul>
+            </div>
+            <!-- MUSIC CONTENT -->
+            <div class="dashboard">
+                <!-- RECENTLY PLAYED -->
+                <section id="recently-played">
+                    <h2>Recently played</h2>
+                    <div class="category">
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://wikitesti.com/wp-content/uploads/2020/01/godzilla-eminem-featuring.jpg" alt="recently played 1">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>Music to be murdered by</h4>
+                                <small>Eminem</small>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://img.discogs.com/Olf_cI8Al5KmeeDLo6uA2NGeyMk=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7095916-1433624940-9569.jpeg.jpg" alt="recently played 2">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>Falling into infinity</h4>
+                                <small>Dream Theater</small>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://a6p8a2b3.stackpathcdn.com/dphogL-osd4nOm9OMun47BGeZCM=/500x500/smart/rockol-img/img/foto/upload/shapeshifting-joe-satriani-cover-ts1587713507.jpeg" alt="recently played 3">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>Shapeshifting</h4>
+                                <small>Joe Satriani</small>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://www.rockbywild.it/wp-content/uploads/2019/03/paul_gilbert_behold_electric_guitar.jpg" alt="recently played 4">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>Behold electric guitar</h4>
+                                <small>Paul Gilbert</small>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://img.discogs.com/5oCAc_rAi2h_AzFHZ7CBZ1xx8OQ=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4004301-1504278249-4142.jpeg.jpg" alt="recently played 5">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>That was then, this is now</h4>
+                                <small>Andy Timmons</small>
+                            </div>
+                        </div>
+                        <div class="track">
+                            <div class="track-img">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/81srbRoiUGL._AC_SY355_.jpg" alt="recently played 6">
+                                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                            </div>
+                            <div class="track-title">
+                                <h4>Passion & warfare</h4>
+                                <small>Steve Vai</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
         <div class="player"></div>
