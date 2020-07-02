@@ -32,6 +32,9 @@ header {
     height: 100px;
     width: calc(100% - 50px);
     background-color: #080b12;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 main {
@@ -42,18 +45,8 @@ main {
     margin-left: 50px;
 }
 
-/* TYPOGRAPHY */
-h1, h5 {
-    color: white;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+button {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .player {
@@ -70,6 +63,32 @@ a {
     clear: both;
 }
 
+a:hover, li:hover i, li:hover span, button:hover {
+    color: white;
+}
+
+button:hover .plus-button {
+    background-color: white;
+}
+
+button#upgrade:hover {
+    transform: scale(1.04);
+}
+
+/* TYPOGRAPHY */
+h1, h5 {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* ASIDE */
 nav, .info ul {
     display: flex;
@@ -83,7 +102,6 @@ h1, .menu span, .playlist,
 }
 
 #logo i, .menu i,
-.info i, .info i,
 .info i {
     font-size: 22px;
     padding: 8px 0;
@@ -97,15 +115,27 @@ h1, .menu span, .playlist,
     color: white;
 }
 
-.menu i, .info i, .info i {
+.menu i, .info i {
     color: #a3a3a3;
+}
+
+/* HEADER */
+button#upgrade {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    background: none;
+    padding: 15px 40px;
+    margin-right: 5px;
+    border: 1px solid white;
+    border-radius: 50px;
 }
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 576px) {
     aside {
         width: 250px;
-        padding: 15px 20px;
+        padding: 15px 0 5px 0;
     }
 
     header {
@@ -143,24 +173,35 @@ h1, .menu span, .playlist,
         margin: 15px 0;
     }
 
-    .menu span {
-        display: inline-block;
-    }
-
-    .menu span, .playlist button span,
-    .playlist li {
-        font-size: 13px;
-        font-weight: 500;
-        padding: 8px 0;
-        color: #6d6d6d;
-    }
-
-    .menu i, .info i, .info i {
+    .menu i, .info i {
         vertical-align: middle;
     }
 
     .menu i {
         min-width: 35px;
+    }
+
+    .menu li:first-child span {
+        color: white;
+    }
+
+    .menu .active {
+        margin-left: 18px;
+    }
+
+    .menu li:first-child {
+        border-left: 2px solid #adff2f;
+    }
+
+    .menu span {
+        display: inline-block;
+    }
+
+    .menu span, .playlist li {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 0;
+        color: #6d6d6d;
     }
 
     .playlist {
@@ -173,9 +214,12 @@ h1, .menu span, .playlist,
 
     button.create-playlist {
         color: #6d6d6d;
+        font-size: 15px;
+        font-weight: 500;
         background: none;
         border: none;
         padding: 8px 0;
+        cursor: pointer;
     }
 
     .playlist .plus-button {
@@ -198,6 +242,7 @@ h1, .menu span, .playlist,
     }
 
     .info li:first-child {
+        width: 100%;
         border-bottom: 1px solid #a3a3a3;
     }
 
@@ -215,8 +260,14 @@ h1, .menu span, .playlist,
     }
 
     .info li:last-child span {
+        font-size: 14px;
         font-weight: 700;
         color: white;
+    }
+
+    #logo, .menu li:not(:first-child),
+    .playlist, .info {
+        margin: 0 20px;
     }
 
 }
