@@ -44,8 +44,7 @@ main {
     background-color: #141922;
     width: calc(100% - 50px);
     min-height: calc(100vh - 200px);
-    margin-top: 100px;
-    margin-left: 50px;
+    margin: 100px 0 100px 50px;
     /* padding: 20px; */
 }
 
@@ -65,7 +64,8 @@ main {
 }
 
 /* BUTTONS & HOVER */
-a:hover, li:hover i, li:hover span, button:hover {
+a:hover, li:hover i, li:hover span,
+button.create-playlist:hover {
     color: white;
 }
 
@@ -133,6 +133,10 @@ h1, .menu span, .playlist,
 
 /* MAIN */
 /* SELECTION BAR */
+.selection-bar {
+    margin-bottom: 20px;
+}
+
 .selection-bar ul {
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +148,6 @@ h1, .menu span, .playlist,
     text-align: center;
     font-size: 13px;
     font-weight: 700;
-    flex: 0 1 auto;
     padding: 20px 9px;
 }
 
@@ -164,6 +167,11 @@ h1, .menu span, .playlist,
 
 /* MUSIC CONTENT */
 /* RECENTLY PLAYED */
+#recently-played h2 {
+    margin-left: 11px;
+    margin-bottom: 30px;
+}
+
 .category {
     display: flex;
     flex-wrap: wrap;
@@ -172,6 +180,7 @@ h1, .menu span, .playlist,
 
 .track {
     flex-basis: calc(100% / 2 - 20px);
+    padding: 5px 0;
 }
 
 .track-img {
@@ -212,7 +221,14 @@ h1, .menu span, .playlist,
     text-align: center;
 }
 .track-title h4 {
-    font-size: 13px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.track-title p {
+    font-size: 11px;
     font-weight: 700;
 }
 
@@ -319,21 +335,16 @@ h1, .menu span, .playlist,
 
     .playlist .plus-button {
         display: inline-block;
-        position: relative;
-        vertical-align: middle;
         width: 35px;
         height: 35px;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 35px;
         margin-right: 10px;
+        vertical-align: middle;
         color: black;
         background-color: #a3a3a3;
-    }
-
-    .playlist b {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-57%);
-        font-size: 25px;
     }
 
     .info li:first-child {
@@ -362,19 +373,24 @@ h1, .menu span, .playlist,
 }
 
 @media screen and (min-width: 768px) {
+    #recently-played h2 {
+        margin-left: 8px;
+    }
+
     .category {
         justify-content: flex-start;
     }
 
     .track {
         flex-basis: calc(100% / 4 - 20px);
-        margin: 10px 10px;
+        margin: 0 10px 10px;
+        padding: 0;
     }
 }
 
 @media screen and (min-width: 992px) {
     .track {
         flex-basis: calc(100% / 6 - 20px);
-        margin: 10px 10px;
+        /* margin: 0 10px 10px; */
     }
 }
