@@ -76,7 +76,7 @@ button:hover .plus-button {
 button#upgrade {
     text-transform: uppercase;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     background: none;
     padding: 15px 40px;
     border: 1px solid white;
@@ -166,10 +166,22 @@ h1, .menu span, .playlist,
 }
 
 /* MUSIC CONTENT */
-/* RECENTLY PLAYED */
-#recently-played h2 {
+/* COMMON STYLES */
+section {
+    padding: 15px 0;
+}
+
+h2, section>p {
     margin-left: 11px;
-    margin-bottom: 30px;
+}
+
+section>p {
+    padding: 10px 0 25px;
+}
+
+section p {
+    font-size: 11px;
+    font-weight: 700;
 }
 
 .category {
@@ -193,27 +205,31 @@ h1, .menu span, .playlist,
 }
 
 .overlay {
-    display: none;
+    display: block;
+    opacity: 0;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.4s ease;
 }
 
 .overlay i {
-    display: none;
+    display: block;
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     color: white;
     font-size: 75px;
+    transition: 0.4s ease;
 }
 
 .track-img:hover .overlay,
 .track-img:hover .overlay i {
-    display: block;
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -227,9 +243,15 @@ h1, .menu span, .playlist,
     padding: 10px 0;
 }
 
-.track-title p {
-    font-size: 11px;
-    font-weight: 700;
+/* RECENTLY PLAYED */
+#recently-played h2 {
+    margin-bottom: 30px;
+}
+
+/* MOST POPULAR */
+#most-popular img,
+#most-popular .overlay {
+    border-radius: 50%;
 }
 
 /* MEDIA QUERIES */
@@ -373,8 +395,8 @@ h1, .menu span, .playlist,
 }
 
 @media screen and (min-width: 768px) {
-    #recently-played h2 {
-        margin-left: 8px;
+    h2, section>p {
+        margin-left: 9px;
     }
 
     .category {
@@ -386,11 +408,14 @@ h1, .menu span, .playlist,
         margin: 0 10px 10px;
         padding: 0;
     }
+
+    .overlay i {
+        font-size: 60px;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .track {
         flex-basis: calc(100% / 6 - 20px);
-        /* margin: 0 10px 10px; */
     }
 }
