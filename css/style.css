@@ -55,6 +55,7 @@ main {
     bottom: 0;
     height: 100px;
     width: 100%;
+    padding: 20px 10px;
 }
 
 .clearfix::after {
@@ -88,7 +89,7 @@ button#upgrade:hover {
 }
 
 /* TYPOGRAPHY */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     color: white;
 }
 
@@ -252,6 +253,126 @@ section p {
 #most-popular img,
 #most-popular .overlay {
     border-radius: 50%;
+}
+
+/* PLAYER */
+.player {
+    display: flex;
+    justify-content: space-around;
+}
+
+.track-controls i,
+.player-time span,
+.settings i {
+    color: white;
+}
+
+/* SELECTED TRACK */
+.selected-track {
+    flex: 0 1 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.selected-track img {
+    width: 40px;
+}
+
+.selected-track-title {
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: 0.85;
+    text-transform: capitalize;
+}
+
+.selected-track-title h5 {
+    font-size: 12px;
+}
+
+.selected-track-title a {
+    font-size: 10px;
+    color: #838383;
+}
+
+.selected-track-title a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.selected-track-actions a {
+    padding: 0 5px;
+}
+
+/* TRACK-CONTROLS */
+.track-controls {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-bar, .player-time {
+    width: 100%;
+}
+
+.buttons-bar {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-bar i {
+    padding: 0 15px;
+}
+
+.buttons-bar .fa-play-circle {
+    font-size: 30px;
+}
+
+.buttons-bar .fa-play-circle:hover {
+    transform: scale(1.1);
+}
+
+.player-time {
+    max-width: 750px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-time span {
+    font-size: 11px;
+    font-weight: 700
+}
+
+.progress-bar, .volume-bar {
+    height: 3px;
+    background-color: #838383;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    width: 70%;
+}
+
+/* SETTINGS */
+.settings {
+    flex: 0 1 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.settings i {
+    font-size: 13px;
+    padding: 0 10px;
+}
+
+.volume-bar {
+    width: 35%;
 }
 
 /* MEDIA QUERIES */
